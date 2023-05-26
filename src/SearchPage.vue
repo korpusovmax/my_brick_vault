@@ -1,5 +1,5 @@
 <template>
-  <div class="search_page">
+  <div class="search_page" @click="searchForSets">
     <div class="table_view">
       <div v-for="set in sets">
         <set-card :set_data="set"></set-card>
@@ -21,18 +21,15 @@ export default {
     }
   },
   methods: {
-    async searchForSets() {
-      fetch('http://localhost:5000/search', {
-        mode: 'no-cors',
-        method: 'post',
-        url: `http://localhost:5000`,
-        credentials: 'include'
-      }).then(response => response.json()).then(data => this.sets = data);
+    searchForSets() {
+      console.log('kjhgfd')
+      fetch('http://127.0.0.1:5000/search', ).then(response => response.json()).then(data => this.sets = data);
 
     }
   },
   mounted() {
-    this.searchForSets();
+    console.log('jopa')
+    //this.searchForSets();
   }
 }
 </script>
