@@ -42,9 +42,11 @@ export default {
 
   width: 160px;
   min-height: 36px;
+  max-height: 256px;
   background: #FEF7FF;
   border-radius: 5px;
   box-shadow: 6px 4px 11px 2px rgba(0, 0, 0, 0.1);
   border: 1px solid #8f9392;
+
 }
 </style>
