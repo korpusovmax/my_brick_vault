@@ -21,10 +21,14 @@ export default {
     }
   },
   methods: {
-    searchForSets() {
-      fetch('http://localhost:5000/search')
-          .then(response => response.json)
-          .then(data => this.sets = data)
+    async searchForSets() {
+      fetch('http://localhost:5000/search', {
+        mode: 'no-cors',
+        method: 'post',
+        url: `http://localhost:5000`,
+        credentials: 'include'
+      }).then(response => response.json()).then(data => this.sets = data);
+
     }
   },
   mounted() {
