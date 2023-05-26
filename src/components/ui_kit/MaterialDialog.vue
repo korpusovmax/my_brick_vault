@@ -48,7 +48,7 @@ export default {
   box-shadow: 6px 4px 11px 2px rgba(0, 0, 0, 0.1);
   border: 1px solid #8f9392;
 
-  overflow: auto;
+  overflow-y: auto;
 }
 .list {
   margin-top: 16px;
