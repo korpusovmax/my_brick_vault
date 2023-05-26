@@ -26,6 +26,10 @@ export default {
     overflow: hidden;
     white-space: nowrap;
 }
+.text_area {
+  min-height: min-content;
+}
+
 .display_large {
     font-size: 57px;
     line-height: 64px;
