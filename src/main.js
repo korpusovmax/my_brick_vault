@@ -9,7 +9,7 @@ import SearchPage from "@/SearchPage.vue";
 
 const app = createApp(App);
 const routes = [
-    // { path: '/', redirect: '/home' },
+    { path: '/', redirect: '/home' },
     { path: '/home', component: HomePage, name: 'home' },
     { path: '/details', component: DetailsPage, name: 'details' },
     { path: '/sets', component: SetsPage, name: 'sets' },

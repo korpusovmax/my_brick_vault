@@ -27,7 +27,7 @@ export default {
     }
   },
   mounted() {
-    //this.searchForSets();
+    this.searchForSets();
   }
 }
 </script>

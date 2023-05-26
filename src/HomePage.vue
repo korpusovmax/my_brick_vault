@@ -11,7 +11,7 @@
     <material-box>
       <div class="box_search">
         <material-text-field label="Поисковой запрос"></material-text-field>
-        <material-button text_color="#7868ca">Поиск</material-button>
+        <material-button @click="this.$router.push('/search')" text_color="#7868ca">Поиск</material-button>
       </div>
       <div class="options_box">
         <div class="list_box">
