@@ -27,7 +27,7 @@ export default {
     white-space: nowrap;
 }
 .text_area {
-  min-height: min-content;
+  min-height: 24px;
 }
 
 .display_large {
