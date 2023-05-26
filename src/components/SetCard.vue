@@ -3,7 +3,7 @@
     <material-box>
       <img src="" alt="Картинка набора" class="set_preview">
       <div class="up_line">
-        <material-text text_class="title_medium">{{set_data[0]}}</material-text>
+        <material-text text_class="title_medium">{{set_id}}</material-text>
         <material-text text_class="title_medium primary_text">Инстркуция</material-text>
       </div>
       <div class="middle_line">
@@ -30,6 +30,10 @@ export default {
   props: {
     set_data: {
       type: Array,
+      required: true
+    },
+    set_id: {
+      type: String,
       required: true
     }
   }

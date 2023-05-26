@@ -1,8 +1,8 @@
 <template>
   <div class="search_page" @click="searchForSets">
     <div class="table_view">
-      <div v-for="set in sets">
-        <set-card :set_data="set"></set-card>
+      <div v-for="(set, key, idx) in sets">
+        <set-card :set_data="set" :set_id="key"></set-card>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@ export default {
   components: {SetCard},
   data() {
     return {
-      sets: []
+      sets: {}
     }
   },
   methods: {
