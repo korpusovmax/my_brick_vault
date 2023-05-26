@@ -1,8 +1,8 @@
 <template>
   <div class="search_page">
     <div class="table_view">
-      <div v-for="i in [0, 1, 2, 3, 4, 5, 6]">
-        <set-card></set-card>
+      <div v-for="set in sets">
+        <set-card :set_data="set"></set-card>
       </div>
     </div>
   </div>
@@ -15,7 +15,21 @@ import SetCard from "@/components/SetCard.vue";
 export default {
   name: 'SearchPage',
   components: {SetCard},
-
+  data() {
+    return {
+      sets: []
+    }
+  },
+  methods: {
+    searchForSets() {
+      fetch('http://localhost:5000/search')
+          .then(response => response.json)
+          .then(data => this.sets = data)
+    }
+  },
+  mounted() {
+    this.searchForSets();
+  }
 }
 </script>
 
