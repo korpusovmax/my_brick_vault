@@ -10,6 +10,7 @@
         <material-check-box :checked="checked" @click="checked = !checked"></material-check-box>
         <material-text text_class="body_large">Соберу</material-text>
       </div>
+      <material-dialog></material-dialog>
     </material-box>
   </div>
 </template>
@@ -19,9 +20,10 @@ import MaterialBox from "@/components/ui_kit/MaterialBox.vue";
 import MaterialText from "@/components/ui_kit/text/MaterialText.vue";
 import MaterialCheckBox from "@/components/ui_kit/MaterialCheckBox.vue";
 import ListItem from "@/components/ui_kit/ListItem.vue";
+import MaterialDialog from "@/components/ui_kit/MaterialDialog.vue";
 
 export default {
-  components: {ListItem, MaterialCheckBox, MaterialText, MaterialBox},
+  components: {MaterialDialog, ListItem, MaterialCheckBox, MaterialText, MaterialBox},
   data() {
     return {
       checked: false,

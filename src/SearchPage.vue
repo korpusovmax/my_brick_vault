@@ -22,13 +22,11 @@ export default {
   },
   methods: {
     searchForSets() {
-      console.log('kjhgfd')
-      fetch('http://127.0.0.1:5000/search', ).then(response => response.json()).then(data => this.sets = data);
+      fetch('https://jsonplaceholder.typicode.com/users/1/todos', ).then(response => response.json()).then(data => this.sets = data);
 
     }
   },
   mounted() {
-    console.log('jopa')
     //this.searchForSets();
   }
 }
