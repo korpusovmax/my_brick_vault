@@ -32,7 +32,7 @@ export default {
     get_quantity(brick) {
       let needed = brick[1];
       let owned = brick[2];
-      if (owned > needed) {
+      if (owned >= needed) {
         return needed;
       } else {
         return `<span style="color:#76ff65">${owned}</span> + <span style="color:crimson">${needed-owned}</span>`
@@ -67,10 +67,13 @@ export default {
 }
 .list {
   margin-top: 16px;
+  width: 100%;
 }
 .table_line {
   width: 100%;
   border-bottom: 1px solid #8f9392;
+  display: flex;
+  align-items: center;
 }
 .table_cell {
   width: 50%;
