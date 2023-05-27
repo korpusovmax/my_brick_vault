@@ -2,8 +2,11 @@
   <div class="dialog">
     <material-text @click="opened = !opened" text_class="title_small">Посмотреть детали</material-text>
     <div v-if="opened" class="list">
-      <div v-for="brick in set_data">
-        {{brick[0]}}:{{brick[1]}}
+      <div v-for="brick in set_data" class="table_line">
+        <div class="table_cell">{{set_data[0]}}</div>
+        <div class="table_cell">
+          <p class="quantity" v-html="get_quantity"></p>
+        </div>
       </div>
     </div>
   </div>
@@ -23,6 +26,17 @@ export default {
   data() {
     return {
       opened: false
+    }
+  },
+  methods: {
+    get_quantity() {
+      let needed = this.$props.set_data[1];
+      let owned = this.$props.set_data[2];
+      if (owned > needed) {
+        return needed;
+      } else {
+        return `<span style="color:#76ff65">${owned}</span> + <span style="color:crimson">${needed-owned}</span>`
+      }
     }
   }
 }
@@ -52,5 +66,13 @@ export default {
 }
 .list {
   margin-top: 16px;
+}
+.table_line {
+  width: 100%;
+  border-bottom: 1px solid #8f9392;
+}
+.table_cell {
+  width: 50%;
+  border-right: 1px solid #8f9392;
 }
 </style>
