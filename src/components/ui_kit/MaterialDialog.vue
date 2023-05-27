@@ -71,12 +71,13 @@ export default {
 }
 .table_line {
   width: 100%;
-  border-bottom: 1px solid #8f9392;
+  //border-bottom: 1px solid #8f9392;
   display: flex;
   align-items: center;
 }
 .table_cell {
+  padding: 8px;
   width: 50%;
-  border-right: 1px solid #8f9392;
+  border: 1px solid #8f9392;
 }
 </style>
