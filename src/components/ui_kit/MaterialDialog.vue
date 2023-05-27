@@ -3,9 +3,9 @@
     <material-text @click="opened = !opened" text_class="title_small">Посмотреть детали</material-text>
     <div v-if="opened" class="list">
       <div v-for="brick in set_data" class="table_line">
-        <div class="table_cell">{{set_data[0]}}</div>
+        <div class="table_cell">{{brick[0]}}</div>
         <div class="table_cell">
-          <p class="quantity" v-html="get_quantity"></p>
+          <p class="quantity" v-html="get_quantity(brick)"></p>
         </div>
       </div>
     </div>
@@ -29,9 +29,9 @@ export default {
     }
   },
   methods: {
-    get_quantity() {
-      let needed = this.$props.set_data[1];
-      let owned = this.$props.set_data[2];
+    get_quantity(brick) {
+      let needed = brick[1];
+      let owned = brick[2];
       if (owned > needed) {
         return needed;
       } else {
@@ -63,6 +63,7 @@ export default {
   border: 1px solid #8f9392;
 
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .list {
   margin-top: 16px;
